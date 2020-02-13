@@ -34,10 +34,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    implementation 'android.arch.lifecycle:common:1.1.1'
 
-    // ViewModel and LiveData
-    implementation "android.arch.lifecycle:extensions:1.1.1"
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
 
     //必须使用
     implementation 'com.lzy.net:okgo:3.0.4'

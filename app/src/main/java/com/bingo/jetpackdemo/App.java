@@ -13,7 +13,8 @@ import com.lzy.okgo.cache.CacheMode;
  * @email: zcbin2@grgbanking.com
  * @time: 2020/2/8 12:53
  * @version: 1.0
- * @description: =================================
+ * @description:
+ * =================================
  */
 public class App extends Application {
     @Override

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bingo.jetpackdemo.R;
 import com.bingo.jetpackdemo.adapter.NewsAdapter;
+import com.bingo.jetpackdemo.lifecycle.NetworkLifecycle;
 import com.bingo.jetpackdemo.mvvm.model.NewsModel;
 import com.bingo.jetpackdemo.databinding.ActivityMvvmBinding;
 import com.bingo.jetpackdemo.mvvm.viewmodel.NewsViewModel;
@@ -42,6 +43,8 @@ public class MvvmActivity extends AppCompatActivity {
                 newsAdapter.notifyDataSetChanged();
             }
         });
+        //增加网络监听器
+        getLifecycle().addObserver(NetworkLifecycle.getInstance());
     }
 
     private void initRecyclerView(){
@@ -58,7 +61,6 @@ public class MvvmActivity extends AppCompatActivity {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 Toast.makeText(MvvmActivity.this,"item child click",Toast.LENGTH_SHORT).show();
-
             }
         });
     }
