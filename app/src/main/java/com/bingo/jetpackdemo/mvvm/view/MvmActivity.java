@@ -23,7 +23,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.List;
 
-public class MvvmActivity extends AppCompatActivity {
+public class MvmActivity extends AppCompatActivity {
     private ActivityMvvmBinding binding;
     private NewsAdapter newsAdapter;
     private NewsViewModel newsVM;
@@ -32,7 +32,7 @@ public class MvvmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_mvm);
 
         initRecyclerView();
         newsVM = ViewModelProviders.of(this).get(NewsViewModel.class);
@@ -54,13 +54,13 @@ public class MvvmActivity extends AppCompatActivity {
         newsAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(MvvmActivity.this,"item click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MvmActivity.this,"item click",Toast.LENGTH_SHORT).show();
             }
         });
         newsAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(MvvmActivity.this,"item child click",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MvmActivity.this,"item child click",Toast.LENGTH_SHORT).show();
             }
         });
     }
